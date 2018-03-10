@@ -53,8 +53,8 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "2.4.2"
   },
-  "description": "An Ionic project"
-  "cordova": {
+  "description": "An Ionic project",
+    "cordova": {
         "plugins": {
             "cordova-plugin-googlemaps": {
                 "API_KEY_FOR_ANDROID": "AIzaSyC-5pE2fOZgzwa4rLxd03ghoMYXyDeIR9s",
@@ -71,7 +71,7 @@
             "cordova-plugin-geolocation": {
                 "GEOLOCATION_USAGE_DESCRIPTION": "Trace your location on the map"
             }
-        },
+        }
 
     }
-}}
+}
