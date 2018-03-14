@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Platform } from 'ionic-angular';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -14,7 +16,23 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(
+    public navCtrl: NavController,
+    //geolocation
+    private geo: Geolocation,
+    private plataform: Platform) { }
+
+  geolocation() {
+    this.plataform.ready().then(() => {
+
+      this.geo.getCurrentPosition().then(res => {
+      alert("latitude: " + res.coords.latitude);
+      alert("longitude: " + res.coords.longitude);
+      }).catch(() => {
+      alert("erro ao pegar geolocalizacao ");
+      })
+      })
+  }
 
   login() {
     this.navCtrl.push('LoginPage');
